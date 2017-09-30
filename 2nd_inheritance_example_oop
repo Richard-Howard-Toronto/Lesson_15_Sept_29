@@ -1,0 +1,58 @@
+#!/usr/bin/ruby
+
+class Being
+
+    @@count = 0
+
+    def initialize
+        @@count += 1
+        puts "Being class created -- #{@@count}"
+    end
+
+    def show_count
+        "There are #{@@count} beings"
+    end
+
+end
+
+class Human < Being
+
+   def initialize
+       super
+       puts "Human is created"
+   end
+end
+
+class Animal < Being
+
+   def initialize
+       super
+       puts "Therefore, a class 'Animal' is created"
+   end
+end
+
+class Dog < Animal
+
+  @@dogcount = 0
+
+   def initialize
+       super
+       puts "A new dog is created"
+   end
+
+
+   def dogcount
+       puts "Dog class created -- #{@@dogcount}"
+   end
+
+
+end
+
+human = Human.new
+human2 = Human.new
+dog = Dog.new
+dog2 = Dog.new
+dog3 = Dog.new
+
+
+puts dog.show_count
